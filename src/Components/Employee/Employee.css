@@ -1,0 +1,51 @@
+.blackBackground{
+   background-color: white;
+   color: black; 
+   height: 70rem;
+   z-index: 1;
+}
+hr{
+    width: 80%;
+}
+ul{
+    list-style: none;
+    height: 70%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.ShadeBlock{
+ width: 90%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ border-top-left-radius: 23px solid black;
+ 
+}
+.MiniPic{
+    width: 10ex;
+    
+}
+.Dimond{
+background-color: #f1158e;
+width: 35ex;
+height:35ex;
+transform: rotate(45deg) translateX(50%);
+opacity: 0.2;
+z-index: 0;
+position: absolute;
+}
+.D2{
+    transform: rotate(0deg) translateX(60%) translateY(23%);
+    opacity: 0.2;
+}
+.BookCard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.SecondInnerCard{
+
+    font-family:  sans-serif;
+    font-style: oblique;
+}

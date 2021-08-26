@@ -9,27 +9,9 @@ const [clicked,setClicked]=useState(1);
 
 
 const OpenWhenClicked =()=>{
-    setClicked(clicked+1)
+    setClicked(prev=>!prev)
 }
-const CloseWhenClicked =()=>{
-
-    setClicked(clicked-1)
-    switch (clicked){
-        case 1:
-        (
-            document.getElementById("NavList").style.visibility="visible"
-        )
-        case 2:
-        (
-            document.getElementById("NavList").style.visibility="hidden"
-        )
-    }
-}
-
-
-   
-
-   
+console.log(clicked)
 
 
     return(
@@ -37,6 +19,7 @@ const CloseWhenClicked =()=>{
             <div className="NavBar">
                 <img src={Icon} alt="Moleboheng Mosnaps Logo Icon" id="Icon"/>
                 <img src={MenuIcon} alt="Menu icon" id="MenuIcon" onClick={OpenWhenClicked}/>
+               {clicked ? document.getElementById('NavList').style.visibility="visible":document.getElementById("NavList").style.visibility="hidden"}
                <ul className="NavList" id="NavList">
                 <li>Home</li>
                 <br/>

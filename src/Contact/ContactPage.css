@@ -1,0 +1,53 @@
+.ContactPage{
+    background-color: pink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.ContactSection{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    background-color: #fff;
+}
+.ConfirmSection{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    background-color: #fff;
+}
+.SuccessSection{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    background-color: #fff;
+}
+.CenterTextC{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.InfoSection{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    width: 80%;
+}
+input{
+    width: 80%;
+    border-top: none;
+    border-right: none;
+    border-left:none ;
+    margin: 5ex;
+}
+:-ms-value{
+    color: red;
+}
+button{
+    margin-left: 5ex;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.2ex;
+}

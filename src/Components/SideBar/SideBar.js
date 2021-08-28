@@ -22,16 +22,18 @@ const OpenWhenClicked =()=>{
                 <img src={MenuIcon} alt="Menu icon" id="MenuIcon" onClick={OpenWhenClicked}/>
                {clicked===false ? <div  id="NavList">
                <ul className="NavList">
-                <li>Home</li>
+                   
+                <li><a  href="/">Home</a></li>
                 <br/>
-                <li>About</li>
+                <li><a  href="/about">About</a></li>
                 <br/>
-                <li>Contact</li>
+                <li><a  href="/contact">Contact</a></li>
                 <br/>
-                <li>Gallery</li>
+                <li><a  href="/gallery">Gallery</a></li>
                 <br/>
-                <li>Services</li>
+                <li><a  href="/service">Service</a></li>
                 <br/>
+                
                </ul>
                </div>:null}
            </div>

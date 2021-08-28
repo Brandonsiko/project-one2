@@ -8,6 +8,7 @@ const Home =()=>{
             <div className="WelcomeDisplay">
                     <div>
                         <img src={Mosnaps} alt="Mosnaps photograpy icon" id="MoSnaps_logo"/>
+                        
                     </div>
                    
             </div>

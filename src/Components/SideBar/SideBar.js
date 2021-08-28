@@ -5,22 +5,23 @@ import Icon from "./Mosnaps.jpg"
 import MenuIcon from "./menu.png"
 
 const SideB =()=>{
-const [clicked,setClicked]=useState(1);
+const [clicked,setClicked]=useState(true);
 
 
 const OpenWhenClicked =()=>{
     setClicked(prev=>!prev)
 }
-console.log(clicked)
+
 
 
     return(
         <div>
             <div className="NavBar">
+
                 <img src={Icon} alt="Moleboheng Mosnaps Logo Icon" id="Icon"/>
                 <img src={MenuIcon} alt="Menu icon" id="MenuIcon" onClick={OpenWhenClicked}/>
-               {clicked ? document.getElementById('NavList').style.visibility="visible":document.getElementById("NavList").style.visibility="hidden"}
-               <ul className="NavList" id="NavList">
+               {clicked===false ? <div  id="NavList">
+               <ul className="NavList">
                 <li>Home</li>
                 <br/>
                 <li>About</li>
@@ -32,7 +33,7 @@ console.log(clicked)
                 <li>Services</li>
                 <br/>
                </ul>
-               
+               </div>:null}
            </div>
         </div>
     )

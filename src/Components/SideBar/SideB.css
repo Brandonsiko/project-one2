@@ -17,10 +17,11 @@
    
 }
 #NavList{
-visibility: hidden;
+visibility: visible;
 }
 .NavBar{
    display: inline-block;
+   color: white;
 }
 #Icon{
    width: 55pt;

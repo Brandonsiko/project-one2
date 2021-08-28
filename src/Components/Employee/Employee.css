@@ -19,11 +19,22 @@ ul{
  align-items: center;
  justify-content: center;
  border-top-left-radius: 23px solid black;
- 
+ flex-wrap: wrap;
 }
 .MiniPic{
     width: 10ex;
-    
+   
+
+}
+.ImageCatch{
+    width: 16ex;
+    height: 19ex;
+    border:1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0.1ex;
 }
 .Dimond{
 background-color: #f1158e;

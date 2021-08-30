@@ -15,7 +15,7 @@ const OpenWhenClicked =()=>{
 
 
     return(
-        <div>
+        <div className="white">
             <div className="NavBar">
 
                 <img src={Icon} alt="Moleboheng Mosnaps Logo Icon" id="Icon"/>

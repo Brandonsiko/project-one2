@@ -14,7 +14,9 @@
    padding: 3ex;
    top: 5ex;
    right: 0;
-   
+}
+.white{
+   background-color: #fff;
 }
 #NavList{
 visibility: visible;
@@ -22,6 +24,8 @@ visibility: visible;
 .NavBar{
    display: inline-block;
    color: white;
+  
+   z-index: 3;
 }
 #Icon{
    width: 55pt;

@@ -1,10 +1,10 @@
 import React from 'react'
 import "./Display.css"
-import LeboArt from "./702159.jpg"
-import Wedding from "./demo (1).jpeg"
-import Portrait from "./demo (1).jpg"
-import Fashion from "./demo (1).png"
-import Artistic from "./demo (2).png"
+import LeboArt from "./camera.webp"
+import Wedding from "./demo (5).jpg"
+import Portrait from "./demo (3).jpg"
+import Fashion from "./demo (4).jpg"
+import Artistic from "./demo (2).jpg"
 
 const Display = () => {
     return (
@@ -16,7 +16,7 @@ const Display = () => {
           <br/>
           <div className="IntroWrap">
             <div className="Card">
-              <h3>Wedding Photography</h3>
+              <h3>Personal Photography</h3>
               <img src={Wedding} alt="Wedding Photography from MoSnaps" className="CardImage"/>
               <div className="CardText">Capture Beautiful memories of your special day!</div>
               <button>View More</button>

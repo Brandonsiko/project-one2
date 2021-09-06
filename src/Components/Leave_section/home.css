@@ -1,9 +1,8 @@
 
 #Background{
-    background: url(Moleboheng.jpg) ;
-    background-size: 98%;
-    background-position-y: -20ex;
-    height: 40ex;
+    
+    
+    height: auto;
     display: flex;
         justify-content: center;
         align-items: center;
@@ -16,7 +15,7 @@
         
 }
 #MoSnaps_logo{
-    width: 100%;
-    border-radius: 14px;
-    opacity: 0.7;
+    width: 30rem;
+    border-radius: 1px;
+    opacity: 1;
 }

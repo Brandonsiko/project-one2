@@ -20,7 +20,8 @@ const OpenWhenClicked =()=>{
 
                 <img src={Icon} alt="Moleboheng Mosnaps Logo Icon" id="Icon"/>
                 <img src={MenuIcon} alt="Menu icon" id="MenuIcon" onClick={OpenWhenClicked}/>
-               {clicked===false ? <div  id="NavList">
+                
+               {clicked===false ? 
                <ul className="NavList">
                    
                 <li><a  href="/">Home</a></li>
@@ -35,7 +36,7 @@ const OpenWhenClicked =()=>{
                 <br/>
                 
                </ul>
-               </div>:null}
+               :null}
            </div>
         </div>
     )

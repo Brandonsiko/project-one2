@@ -12,6 +12,12 @@
    padding-top: 2ex;
    padding-bottom: 2ex;
 }
+.b{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 .AlignSpace{
     display: flex;
     justify-content: space-evenly;
@@ -27,10 +33,11 @@
 }
 .SpecialBtn{
     width: 19vw;
+    height: 6ex;
     border-bottom: 1px solid pink;
     border-right: 1px solid pink;
     margin-top: 4vw;
-    
+    font-size: 3vw;
     bottom: 0;
 }
 .SpecialBtn:hover{
@@ -45,31 +52,7 @@
     border-color: royalblue;
    
 }
-.downLine{
-    background-color:red; 
-    display: flex;
-    transform: rotate(27deg) translateX(18vw);
-    position: absolute;
-    height: 141vh;
-    right: 6ex;
-    top: -23ex;
-    opacity: 0.7;
-    width: 2ex;
-    z-index: -10;
-}
 
-.line{
-    background-color: purple;
-    transform: rotate(27deg);
-    position: absolute;
-    height: 140vh;
-    width: 2ex;
-    display: flex;
-    left: -20ex;
-    top: -15ex;
-    opacity: 0.7;
-    z-index: -10;
-}
 .Signature{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-style: oblique;

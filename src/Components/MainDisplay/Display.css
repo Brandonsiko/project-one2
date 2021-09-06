@@ -10,7 +10,8 @@
 }
 #LA{
     border-radius: 50%;
-    width: 30%;
+    width: 140pt;
+    height: 120pt;
     transform: translateY(-7ex);
 }
 .CenterText{
@@ -30,8 +31,8 @@
  }
  .Card{
      
-     z-index: 900;
-     width: 250pt;
+     z-index: 90;
+     width: 220pt;
      margin: 2em;
  }
  .CardImage{

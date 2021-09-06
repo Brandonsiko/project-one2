@@ -2,11 +2,13 @@ import {React , useState} from 'react'
 import "./Employee.css"
 import MoSnapPics from "./Weddings/menuItem"
 import CarsPics from './Cars/Cars'
-
+import PortraitPics from './Portraits/Portraits'
+import ArtPics from './Artistic/Artistic'
+import PersonalPics from './Animals/Animals'
 
 const  Empolyee=()=> {
    const [ page,setPage ]=useState(1)
-    
+   const [ placeholderd,setPlaceholder ]=useState(0)
     const NextPage =()=>{
         
         setPage(page>4 ? 1:page+1)
@@ -30,56 +32,157 @@ const  Empolyee=()=> {
         setPage(5)
     }
 
-    console.log(page)
+    
+    const BackP =()=>{
+        setPlaceholder(0)
+    }
+    
+
+    const Enlarge=(event)=>{
+      setPlaceholder(event.target.id);
+}
+   MoSnapPics.length=6;
+   CarsPics.length=6;
+   PortraitPics.length=6;
+   ArtPics.length=6
+   PersonalPics.length=6
+ 
     return (
 
         <div className="blackBackground">
 
                     <br/>
                     <hr/>
-                    <h1 onClick={BackPage}>Mo Snaps</h1>
+                    <h1>Mo Snaps</h1>
                     <div>
                     <ul className="CenterText ">
-                        <li onClick={Weddings}>Weddings</li>
-                        <li onClick={Animals}>Animals</li>
-                        <li onClick={Cars}>Cars</li>
-                        <li onClick={Portraits}>Portraits</li>
-                        <li onClick={Artisitic}>Artisitic</li>
+                        <li onClick={Weddings} className="MPics">Beauty</li>
+                        <li onClick={Animals} className="MPics"></li>
+                        <li onClick={Cars} className="MPics">Cars</li>
+                        <li onClick={Portraits} className="MPics">Portraits</li>
+                        <li onClick={Artisitic} className="MPics">Artisitic</li>
                         </ul>
                     </div>
-                    {page===1?<div className="ShadeBlock">
-                    {MoSnapPics.map((goat, nji)=>{
-                        return(
-                                <div className="ImageCatch"> 
-                                <img src={goat.image} key={nji} alt="my my my" className="MiniPic"/>
+                        <div className="GHigh">
+                            {placeholderd>0 && page===1?
+                            <div className="ZoomCatcher">
+                                 
+                            <div className="ZoomedPic">
+                               
+                            {placeholderd>0 ?
+                                <div className="ZoomedPic">
+                                    <button className="SNextBtn" onClick={BackP}>close</button>
+                                    <img src={MoSnapPics[placeholderd-1].image} className="MiniPic" alt="MoSnap Photography weddings and artistic photos"/>
+                                
                                 </div>
-                            ) })}
-                    </div>:null}
+                            :null}
+                            </div>
+                            </div>:null}
 
-                    {page===2?<div className="ShadeBlock">
-                    <div>Animal Page </div>
-                    </div>:null}
-
-                    {page===3?<div className="ShadeBlock">
-                    {CarsPics.map((car, numC)=>{
-                        return(
-                                <div className="ImageCatch"> 
-                                <img src={car.image} key={numC} alt="my my my" className="MiniPic"/>
+                            {placeholderd>0 &&page===5?<div> <div className="ZoomCatcher">
+                            <div className="ZoomedPic">
+                            {placeholderd>0 ?
+                                <div className="ZoomedPic">
+                                    <button className="SNextBtn" onClick={BackP}>close</button>
+                                    <img src={ArtPics[placeholderd-501].image} className="MiniPic" alt="MoSnap Photography weddings and artistic photos"/>
+                                
                                 </div>
-                            ) })}
-                    </div>:null}
+                            :null}
+                            </div>
+                            </div></div>:null}
 
-                    {page===4?<div className="ShadeBlock">
-                   <div>Portraits Page</div>
-                    </div>:null}
+                            {placeholderd>0 &&page===4?<div> <div className="ZoomCatcher">
+                            <div className="ZoomedPic">
+                            {placeholderd>0 ?
+                                <div className="ZoomedPic">
+                                    <button className="SNextBtn" onClick={BackP}>close</button>
+                                    <img src={PortraitPics[placeholderd-401].image} className="MiniPic" alt="MoSnap Photography weddings and artistic photos"/>
+                                
+                                </div>
+                            :null}
+                            </div>
+                            </div></div>:null}
 
-                    <div className="CenterText" onClick={NextPage}>01 next</div>
+                            {placeholderd>0 &&page===3?<div> <div className="ZoomCatcher">
+                            <div className="ZoomedPic">
+                            {placeholderd>0 ?
+                                <div className="ZoomedPic">
+                                    <button className="SNextBtn" onClick={BackP}>close</button>
+                                    <img src={CarsPics[placeholderd-301].image} className="MiniPic" alt="MoSnap Photography weddings and artistic photos"/>
+                                
+                                </div>
+                            :null}
+                            </div>
+                            </div></div>:null}
+
+                            {placeholderd>0 &&page===2?<div> <div className="ZoomCatcher">
+                            <div className="ZoomedPic">
+                            {placeholderd>0 ?
+                                <div className="ZoomedPic">
+                                    <button className="SNextBtn" onClick={BackP}>close</button>
+                                    <img src={PersonalPics[placeholderd-201].image} className="MiniPic" alt="MoSnap Photography weddings and artistic photos"/>
+                                
+                                </div>
+                            :null}
+                            </div>
+                            </div></div>:null}
+
+
+                            {page===1?<div className="ShadeBlock"  >
+                            
+                            {MoSnapPics.map((goat, nji)=>{
+                                return(
+                                    <div className="ImageCatch" id={goat.placeHolder} onClick={Enlarge}>
+                                        
+                                        <img src={goat.image} key={nji} alt="my my my" className="MiniPic" id={goat.placeHolder} onClick={Enlarge}/>
+                                        </div>
+                                    ) })}
+                                    
+                            </div>:null}
+
+                            {page===2?<div className="ShadeBlock">
+                            {PersonalPics.map((beauty, nji)=>{
+                                return(
+                                    <div className="ImageCatch" id={beauty.placeholder} onClick={Enlarge}>
+                                        <img src={beauty.image} key={nji} alt="my my my" className="MiniPic" id={beauty.placeholder} onClick={Enlarge}/>
+                                        </div>
+                                    ) })}
+                            </div>:null}
+
+                            {page===3?<div className="ShadeBlock">
+                            {CarsPics.map((car, numC)=>{
+                                return(
+                                        <div className="ImageCatch" id={car.placeHolder} onClick={Enlarge}> 
+                                        <img src={car.image} key={numC} alt="my my my" className="MiniPic" id={car.placeHolder} onClick={Enlarge}/>
+                                        </div>
+                                    ) })}
+                            </div>:null}
+
+                            {page===4?<div className="ShadeBlock">
+                            {PortraitPics.map((car, numC)=>{
+                                return(
+                                        <div className="ImageCatch"id={car.placeHolder} onClick={Enlarge}> 
+                                        <img src={car.image} key={numC} alt="my my my" className="MiniPic" id={car.placeHolder} onClick={Enlarge}/>
+                                        </div>
+                                    ) })}
+                             </div>:null}
+
+                             {page===5?<div className="ShadeBlock">
+                            {ArtPics.map((artP, numC)=>{
+                                return(
+                                        <div className="ImageCatch" id={artP.placeHolder} onClick={Enlarge}> 
+                                      <img src={artP.image} key={numC} alt="my my my" className="MiniPic"id={artP.placeHolder} onClick={Enlarge}/>
+                                        </div>
+                                    ) })}
+                            </div>:null}
+                        </div>
+                    <div className="flow" >{page>1&&page<6?<button onClick={BackPage} className="Secondary-btn">{page-1} Back</button>:null}<strong>{page}</strong>{page<5?<button className="Secondary-btn" onClick={NextPage}>{page+1} Next</button>:null}</div>
                     <br/>
                     <hr/>
                     <div className="Dimond"></div>
                     <div className="Dimond D2"></div>
                     <div className="BookCard">
-                <h3>How to get Photographed</h3>
+                <h3 className="Texted">How to get Photographed</h3>
                 <div className="BookCardInner">
                 <div className="SecondInnerCard">Get online on any social media platform<h4>01</h4></div>
                 <div className="SecondInnerCard">choose a date and book<h4>02</h4></div>

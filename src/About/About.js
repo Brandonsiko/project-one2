@@ -4,7 +4,7 @@ import LeboM from "./Moleboheng.jpg"
 
 export default function About() {
     return (
-        <div className="CenterTextC">
+        <div className="b">
             <hr/>
             <div className="Card AlignSpace">
                 <img src={LeboM} alt="MoSnap Owner!" className="AboutPic"/>

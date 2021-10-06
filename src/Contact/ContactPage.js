@@ -1,15 +1,16 @@
 import React,{useState} from 'react'
 import "./ContactPage.css"
+import emailjs from 'emailjs-com'
+
 
 export default function ContactPage() {
  
 const [Fname,setFname] = useState("Name");
 const [Emails,setEmails] = useState("Email");
-const [Surname,setSurname] = useState("Surname");
+const [ShootDate,setShootDate] = useState("Date");
 const [Messages,setMessages] = useState("Message...");
-const [Numbers,setNumbers] = useState("Numbers");
+const [Numbers,setNumbers] = useState(+27);
 const [Location,setLocation] = useState("Location");
-
 
 
 const [page ,setPage]=useState(1)
@@ -27,28 +28,79 @@ const Sent=()=>{
 }
 
 const ChangedFn =(event)=>{
-    setFname(event.target.value)
-    
+    if(Fname==="Name"){
+        setFname("")
+    }else{
+    setFname(event.target.value);
+    }
 }
 const ChangedSn =(event)=>{
-    setSurname(event.target.value)
+    if(ShootDate==="Date"){
+        setShootDate("")
+    }else{
+    setShootDate(event.target.value)
+}
     
 }
 const ChangedEm =(event)=>{
-    setEmails(event.target.value)
+    if(Emails==="Email"){
+        setEmails("")
+    }
     
+    else{
+    setEmails(event.target.value)
+    }
+    if(Emails.length===0){
+        
+    }
 }
 const ChangedLc =(event)=>{
-    setLocation(event.target.value)
-    
+    if(Location==="Location"){
+        setLocation("");
+          
+    }else{
+    setLocation(event.target.value);
+    }
+   
 }
 const Changedsv =(event)=>{
-    setNumbers(event.target.value)
+    Number(Location)
+    if(Numbers.length>13 || Numbers.length<4){
+        alert("Number isnt valid")
+          
+    }else{
+    setNumbers(event.target.value);
+    }
     
 }
 const ChangedMg=(event)=>{
     setMessages(event.target.value)
     
+}
+
+
+const SendEmail =(event)=>{
+    /* init("user_ssOoa5rYPR1UQSprPCVIU");  
+     //Access token 64624564a187acbbf8728d52af44a81e
+ */
+  event.preventDefault();
+    emailjs.send('service_9gi31u7', 'template_hfnm8hk',{
+        first_name:Fname,
+        Client_location:Location,
+        BookDate:ShootDate,
+        email:Emails,
+        number:Numbers,
+        message:Messages,
+    }, 'user_ssOoa5rYPR1UQSprPCVIU')
+    .then((response)=>{
+        console.log(response.text);
+    },(error)=>{
+        console.log(Error)
+    })
+   /*.then(()=>{
+       ClearInput()
+   })*/
+   
 }
 
 
@@ -59,9 +111,9 @@ const ChangedMg=(event)=>{
                 <div className="CenterTextC"><h2>Contact Section</h2>
                 <hr/>
                 </div>
-                <input type="text" value={Fname} defaultValue="fname" required="Enter your Name" onChange={ChangedFn}/>
-                <input type="text" value={Surname} defaultValue="surname" required="Enter your Surname"  onChange={ChangedSn}/>
-                <input type="text" value={Emails} defaultValue="email" required="Please enter valid email address"  onChange={ChangedEm}/>
+                <input type="text" value={Fname}  required onChange={ChangedFn}/>
+                <input type="text" value={ShootDate}  required  onChange={ChangedSn}/>
+                <input type="text" value={Emails}  required="Please enter valid email address"  onChange={ChangedEm}/>
                 <button onClick={NextPage} className="primary-btn">next</button>
                 <br/>
             </div>:null}
@@ -70,6 +122,7 @@ const ChangedMg=(event)=>{
             <div className="CenterTextC"><h2>Info Section</h2>
                 <hr/>
                 </div>
+                
                 <input type="text" value={Location} defaultValue={Location} required="Enter Location"  onChange={ChangedLc}/>
                 <input type="text" value={Numbers} defaultValue={Numbers} required="Enter Service"  onChange={Changedsv}/>
                 <input type="text" value={Messages} defaultValue={Messages} required="Enter more details regarding the shoot"  onChange={ChangedMg}/>
@@ -84,7 +137,7 @@ const ChangedMg=(event)=>{
                 <hr/>
                 </div>
                 <div className="TextDisplay">{"Name : "+Fname }<br/>
-                {"Surname :"+Surname}<br/>
+                {"Surname :"+ShootDate}<br/>
                 {"Email :"+Emails}<br/>
                 {"Photoshoot scheduled  at :"+Location}<br/>
                 {"contact No :"+Numbers}<br/>

@@ -2,7 +2,11 @@ import React from 'react'
 import "./About.css"
 import LeboM from "./Moleboheng.jpg"
 
-export default function About() {
+ const  About=()=> {
+
+    const Lebza ="http:www.instagram.com/leebow_monye"
+
+
     return (
         <div className="b">
             <hr/>
@@ -13,7 +17,7 @@ export default function About() {
                 <br/>
                 <br/>
                 <label className="Signature">MoSnap's photographer</label>
-                <div><button className="SpecialBtn">View More</button></div>
+                <div><button className="SpecialBtn" >View More</button></div>
                 </div>
                
             </div>
@@ -31,3 +35,6 @@ export default function About() {
         </div>
     )
 }
+
+
+export default About

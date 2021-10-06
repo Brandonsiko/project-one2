@@ -1,11 +1,11 @@
 .AboutCard{
-    width: 85%;
+    width: 80%;
     margin-bottom: 3ex;
     font-family: Arial, Helvetica, sans-serif;
     word-wrap: normal;
     stroke-opacity: 0.5;
     padding: 2ex;
-    color: rgb(48, 7, 87);
+    color: black;
 }
 .AboutPic{
    width: 40vw;
@@ -32,13 +32,13 @@
     
 }
 .SpecialBtn{
-    width: 19vw;
+    width: 50pt;
     height: 6ex;
     border-bottom: 1px solid pink;
     border-right: 1px solid pink;
     margin-top: 4vw;
-    font-size: 3vw;
-    bottom: 0;
+    font-size: 1.2ex;
+   margin-top: 9vw;
 }
 .SpecialBtn:hover{
     color: #000;
@@ -62,8 +62,10 @@
     text-decoration: underline;
 }
 .purple{
-    background-color: rgb(243, 217, 243);
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: transparent;
     font-style: italic;
+    font-size: 2.8vw;
     z-index: 3;
 }
 hr{

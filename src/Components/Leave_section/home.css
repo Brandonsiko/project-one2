@@ -15,7 +15,8 @@
         
 }
 #MoSnaps_logo{
-    width: 30rem;
+    width: 100%;
+    height: 15rem;
     border-radius: 1px;
     opacity: 1;
 }

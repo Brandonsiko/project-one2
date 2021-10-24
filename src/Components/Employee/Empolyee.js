@@ -202,7 +202,7 @@ const  Empolyee=()=> {
                     <br/>
                     <a href="/contact" className="blueText">book here</a>
                     <h4>01</h4></div>
-                <div className="SecondInnerCard">choose a date and book<h4>02</h4></div>
+                <div className="SecondInnerCard">Choose a date and book<h4>02</h4></div>
                 <div className="SecondInnerCard">Enjoy an amazing photoshoot as I work<h4>03</h4></div>
                 <div className="SecondInnerCard">Enjoy Your memories for a lifetime<h4>04</h4></div>
                 </div>

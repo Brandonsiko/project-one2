@@ -14,11 +14,11 @@ const OpenWhenClicked =()=>{
 
 
 
+
     return(
         <div className="white">
             <div className="NavBar">
-
-                <img src={Icon} alt="Moleboheng Mosnaps Logo Icon" id="Icon"/>
+                <a  href="/"><img src={Icon} alt="Moleboheng Mosnaps Logo Icon" id="Icon"/></a>
                 <img src={MenuIcon} alt="Menu icon" id="MenuIcon" onClick={OpenWhenClicked}/>
                 
                {clicked===false ? 
@@ -37,6 +37,20 @@ const OpenWhenClicked =()=>{
                 
                </ul>
                :null}
+               <ul className="NavList2">
+                   
+                   <li><a  href="/">Home</a></li>
+                   <br/>
+                   <li><a  href="/about">About</a></li>
+                   <br/>
+                   <li><a  href="/contact">Contact</a></li>
+                   <br/>
+                   <li><a  href="/gallery">Gallery</a></li>
+                   <br/>
+                   <li><a  href="/service">Service</a></li>
+                   <br/>
+                   
+                  </ul>
            </div>
         </div>
     )

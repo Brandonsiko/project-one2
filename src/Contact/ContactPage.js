@@ -4,94 +4,148 @@ import emailjs from 'emailjs-com'
 
 
 export default function ContactPage() {
- 
-const [Fname,setFname] = useState("Name");
-const [Emails,setEmails] = useState("Email");
-const [ShootDate,setShootDate] = useState("Date");
-const [Messages,setMessages] = useState("Message...");
-const [Numbers,setNumbers] = useState(+27);
-const [Location,setLocation] = useState("Location");
-
+const [Emails,setEmails]=useState("")
+const [PlaceSearch,setPlaceSearch]=useState("")
+const Places=[
+    {Province:"gauteng",pNum:1},
+    {Province:"north west",pNum:2},
+    {Province:"free state",pNum:3},
+    {Province:"port elizabirth",pNum:4},
+    {Province:"limpopo",pNum:5},
+    {Province:"northren cape",pNum:6},
+    {Province:"western cape",pNum:7},
+    {Province:"kwa zulu natal",pNum:8}
+]
+const months=[
+    {MonthIs:"January",mon:1},
+    {MonthIs:"Febuary",mon:2},
+    {MonthIs:"March",mon:3},
+    {MonthIs:"April",mon:4},
+    {MonthIs:"May",mon:5},
+    {MonthIs:"June",mon:6},
+    {MonthIs:"July",mon:7},
+    {MonthIs:"August",mon:8},
+    {MonthIs:"Septrmber",mon:9},
+    {MonthIs:"October",mon:10},
+    {MonthIs:"November",mon:11},
+    {MonthIs:"December",mon:12}
+]
+const [Year,setYear]=useState(2021)
+const [month,setMonth]=useState("January")
+const [Fname,setFname]=useState("")
+const [ShootDate,setShootDate]=useState(1)
+const [Messages,setMessages]=useState("")
+const [Numbers,setNumbers]=useState()
 
 const [page ,setPage]=useState(1)
-const NextPage =(event)=>{
-    event.preventDefault();
-    setPage(page>3 ? 1:page+1)
+
+const NextPage1=(event)=>{
+
+    event.preventDefault()
+    setPage(2)
+    if(Emails.includes("@")){
+        document.getElementById("invalidEmail").style.display="none"
+    }else{
+     document.getElementById("invalidEmail").style.display="inline"
+    }
+
+}
+const NextPage2=(event)=>{
+    event.preventDefault()
+    if(Numbers){
+        setPage(3)
+    }
+    
 }
 const BackPage =()=>{
     setPage(page<2 ? 4:page-1)
 }
 const Sent=()=>{
     setPage(page>3 ? 1:page+1)
-   setMessages("")
-    
 }
-
+const ChangeYr=(event)=>{
+    setYear(event.target.value)
+}
+const ChangeMnth =(event)=>{
+    setMonth(event.target.value)
+    if(event.target.value.length===0){
+        document.getElementById("MnthLbl").style.display="inline"
+    }else{
+        document.getElementById("MnthLbl").style.display="none"
+    }
+}
 const ChangedFn =(event)=>{
-    if(Fname==="Name"){
-        setFname("")
+    setFname(event.target.value)
+    if(event.target.value.length===0){
+        document.getElementById("fnLbl").style.display="inline"
     }else{
-    setFname(event.target.value);
+        document.getElementById("fnLbl").style.display="none"
     }
 }
-const ChangedSn =(event)=>{
-    if(ShootDate==="Date"){
-        setShootDate("")
-    }else{
-    setShootDate(event.target.value)
-}
-    
-}
-const ChangedEm =(event)=>{
-    if(Emails==="Email"){
-        setEmails("")
-    }
-    
-    else{
+const ChangeEm=(event)=>{
     setEmails(event.target.value)
+    if(event.target.value.length===0){
+        document.getElementById("emailLbl").style.display="inline"
+    }else{
+        document.getElementById("emailLbl").style.display="none"
     }
-    if(Emails.length===0){
+}
+const ChangeDt=(event)=>{
+    document.getElementById("shootLbl").style.display="none"
+    
+    if(event.target.value.length>0){
         
-    }
-}
-const ChangedLc =(event)=>{
-    if(Location==="Location"){
-        setLocation("");
-          
+        setShootDate(event.target.value)
+    }if(event.target.value>31 || event.target.value<1){
+       setShootDate(1)
     }else{
-    setLocation(event.target.value);
+        setShootDate(event.target.value)
     }
-   
+   if(event.target.value.length===0){
+    setShootDate(event.target.value)
+   }
 }
-const Changedsv =(event)=>{
-    Number(Location)
-    if(Numbers.length>13 || Numbers.length<4){
-        alert("Number isnt valid")
-          
-    }else{
-    setNumbers(event.target.value);
-    }
-    
-}
-const ChangedMg=(event)=>{
+const ChangeMs=(event)=>{
     setMessages(event.target.value)
-    
+    if(event.target.value.length===0){
+        document.getElementById("MsgLbl").style.display="inline"
+    }else{
+        document.getElementById("MsgLbl").style.display="none"
+    }
 }
+const ChangeNum=(event)=>{
+    setNumbers(event.target.value)
+    if(event.target.value.length===0){
+        document.getElementById("Pnum").style.display="inline"
+    }
+    else{
+        document.getElementById("Pnum").style.display="none"
+    }
+}
+const FilteredPlace =Places.filter((val)=>{
 
+     return val.Province.includes(PlaceSearch)
+     
+})
+const Changeloc=(event)=>{
+    setPlaceSearch(event.target.value)
+    if(event.target.value.length<=0){
+        document.getElementById("Loc").style.display="none"
+        document.getElementById("plcLbl").style.display="inline"
+    }else{
+        document.getElementById("plcLbl").style.display="none"
+        document.getElementById("Loc").style.display="inline"
+    }
+}
 
 const SendEmail =(event)=>{
     /* init("user_ssOoa5rYPR1UQSprPCVIU");  
-     //Access token 64624564a187acbbf8728d52af44a81e
+     
  */
   event.preventDefault();
-    emailjs.send('service_9gi31u7', 'template_hfnm8hk',{
-        first_name:Fname,
-        Client_location:Location,
-        BookDate:ShootDate,
-        email:Emails,
-        number:Numbers,
-        message:Messages,
-    }, 'user_ssOoa5rYPR1UQSprPCVIU')
+    emailjs.send(`${process.env.REACT_APP_service_key}`, `${process.env.REACT_APP_template_key}`,{
+       
+    }, `${process.env.REACT_APP_USER_KEY}`)
     .then((response)=>{
         console.log(response.text);
     },(error)=>{
@@ -100,36 +154,96 @@ const SendEmail =(event)=>{
    /*.then(()=>{
        ClearInput()
    })*/
-   
+   console.log(process.env)
 }
 
 
     return (
         <div className="ContactPage">
+            
             <br/>
             {page===1?<div className="ContactSection">
                 <div className="CenterTextC"><h2>Contact Section</h2>
                 <hr/>
                 </div>
-                <input type="text" value={Fname}  required onChange={ChangedFn}/>
-                <input type="text" value={ShootDate}  required  onChange={ChangedSn}/>
-                <input type="text" value={Emails}  required="Please enter valid email address"  onChange={ChangedEm}/>
-                <button onClick={NextPage} className="primary-btn">next</button>
+                <div className="well">
+                    <label id="fnLbl" className="Lbl">Name</label>
+                    <input type="text" value={Fname} name="Fname" required onChange={ChangedFn}/>
+                </div>
+                <br/>
+                <div className="Months">
+                    <div>
+                        <label className="Lbl" id="shootLbl">Day</label>
+                        <input type="number" value={ShootDate} required onChange={ChangeDt}/>
+                    </div>
+                    <div>
+                        <label className="Lbl" id="MnthLbl" >month</label>
+                        <div className="Monthfs" id="Mont">
+                          <div  className="Stickyi">{months.map((jy,hi)=>{
+                              return(
+                              <div>
+                                  <li key={hi} onClick={()=>{setMonth(months[jy.mon-1].MonthIs); document.getElementById("Mont").style.display="none"}}>{jy.MonthIs}</li>
+                            
+                              </div>
+                              )
+                             })}</div>
+                        </div>
+                        <input type="text" value={month} required onFocus={()=>{document.getElementById("Mont").style.display="inline"}} onChange={ChangeMnth}/>
+                    </div>
+                    <div>
+                        <label className="Lbl" id="shootLbl">year</label>
+                        <input type="number" value={Year} name="ShootDate" required  onChange={ChangeYr}/>
+                    </div>
+                
+                </div>
+                <br/>
+                <div className="well">
+                <label id="emailLbl" className="Lbl">Email</label>
+                <input type="text" value={Emails} name="Emails" required onChange={ChangeEm}/>
+                <br/>
+                <label className="Warning" id="invalidEmail">please add valid Email</label>
+                </div>
+                <br/>
+                <button onClick={NextPage1} className="primary-btn">next</button>
                 <br/>
             </div>:null}
             
             {page===2?<div className="InfoSection">
-            <div className="CenterTextC"><h2>Info Section</h2>
-                <hr/>
-                </div>
-                
-                <input type="text" value={Location} defaultValue={Location} required="Enter Location"  onChange={ChangedLc}/>
-                <input type="text" value={Numbers} defaultValue={Numbers} required="Enter Service"  onChange={Changedsv}/>
-                <input type="text" value={Messages} defaultValue={Messages} required="Enter more details regarding the shoot"  onChange={ChangedMg}/>
-                <div>
-                    <button onClick={BackPage} className="primary-btn">back</button><button onClick={NextPage} className="primary-btn">next</button>
-                </div>
-                <br/>
+                      <div className="CenterTextC">
+                         <h2>Info Section</h2>
+                         <hr/>
+                       </div>
+                       <div className="well">
+                       <label className="Lbl select" id="plcLbl">Province</label>
+                       <div className="Sticky">
+                            <div id="Loc" className="Locations">{Places.map((jy,hi)=>{
+                                return(<div>
+                                        <li key={hi} onClick={()=>{
+                                            setPlaceSearch(Places[jy.pNum-1].Province); 
+                                            document.getElementById("Loc").style.display="none"}}>
+                                            {jy.Province}
+                                        </li>
+                                    </div>)
+                                })}
+                            </div>
+                        </div>
+                        <input type ="text" value={PlaceSearch} onFocus={Changeloc}/>
+                       </div>
+                       <div className="well">
+                         <label className="Lbl" id="Pnum" >Phone No:</label>
+                            <input type="text" value={Numbers} required onChange={ChangeNum}/>
+                         
+                      </div>
+                      <div className="well">
+                          <label className="Lbl" id="MsgLbl">Message</label>
+                            <input type="text" className="message" value={Messages} name={"Messages"} required  onChange={ChangeMs}/>
+                     </div>
+                      <br/>
+                    <div>
+                    <button onClick={BackPage} className="primary-btn">back</button>
+                    <button onClick={NextPage2} className="primary-btn">next</button>
+                    </div>
+                	 <br/>
             </div>
             :null}
             {page===3 ?<div className="ConfirmSection">
@@ -137,9 +251,9 @@ const SendEmail =(event)=>{
                 <hr/>
                 </div>
                 <div className="TextDisplay">{"Name : "+Fname }<br/>
-                {"Surname :"+ShootDate}<br/>
+                {"Date for shoot :"+ShootDate +"/"+month+"/"+Year}<br/>
                 {"Email :"+Emails}<br/>
-                {"Photoshoot scheduled  at :"+Location}<br/>
+                {"Photoshoot scheduled  at :"+PlaceSearch}<br/>
                 {"contact No :"+Numbers}<br/>
                 {" :"+Messages}</div>
                 <div>

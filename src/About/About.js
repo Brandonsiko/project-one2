@@ -17,7 +17,10 @@ import LeboM from "./Moleboheng.jpg"
                 <br/>
                 <br/>
                 <label className="Signature">MoSnap's photographer</label>
-                <div><button className="SpecialBtn" >View More</button></div>
+                    <div>
+                        
+                        <button className="SpecialBtn" ><a href="https://www.instagram.com/leebow_monye " target="_blank" className="black">View More</a></button>
+                    </div>
                 </div>
                
             </div>
@@ -26,11 +29,11 @@ import LeboM from "./Moleboheng.jpg"
             
             <hr/>
             <div className="AboutCard purple" >
-                <article>I am passionate photographer, who loves to take imaculant pictures of my mediate surrounding!</article>
-                <br/>
+                <article>&ldquo; I am passionate photographer, who loves to take imaculant and beautiful pictures of my mediate surrounding!</article>
+                <p>I pride myself in my work to give quality memories ,Life is beautiful and its ment ti be enjoyed that's where i come in by capturing memorable pictures</p>
                 <article>Aside from taking pictures I love spending time with Family. Hanging with My friends and going out!</article>
                 <br/>
-                <article></article>
+                <article>Make beautiful memories you and the lense&rdquo;</article>
             </div>
         </div>
     )

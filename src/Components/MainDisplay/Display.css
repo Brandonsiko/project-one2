@@ -10,8 +10,10 @@
 }
 #LA{
     border-radius: 50%;
-    width: 140pt;
-    height: 120pt;
+    width: 20ex;
+    height: 20ex;
+    object-fit: cover;
+    
     transform: translateY(-7ex);
 }
 .CenterText{
@@ -25,19 +27,22 @@
      font-style: italic;
      position: absolute;
      display: flex;
-     width: 190pt ;
-     transform: translateY(-15ex);
-     font-size: 1.3rem;
+     width: 170pt ;
+     transform: translateY(-20ex) translateX(-1ex);
+     font-size: 1.5rem;
+     
  }
+ 
  .Card{
      
      z-index: 90;
-     width: 220pt;
+     width: 30ex;
      margin: 2em;
  }
  .CardImage{
-     width: 80%;
-     margin: 2ex;
+    width: 100%;
+    height: 300pt;
+     object-fit:cover;
  }
  .IntroWrap{
      display: flex;

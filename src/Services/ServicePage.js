@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
-import Thandeka from "./thandeka.jpg"
-import coporate from "./coporate pic.jpg"
-import art2 from "./art (2).jpg"
-import Wed from "./Xhosa bride.jpeg"
+import CarsPics from '../Components/Employee/Cars/Cars'
+import menuitem from "../Components/Employee/Weddings/menuItem"
 import AB from "./AB.jpg"
 import "./ServicePage.css"
+import ArtPics from '../Components/Employee/Artistic/Artistic'
 
 
 export default function ServicePage() {
@@ -55,7 +54,7 @@ const Item6 =()=>{
                      <article>For More infromation visit our <a href="/contact" className="blackText">Contact Page</a> and get a qoute we'll be more than happy to get in touch</article>
                     <br/>
                     
-                    <img src={Thandeka} alt="Graduation Photography"/>
+                    <img src={CarsPics[0].image} alt="Graduation Photography"/>
                  </div>:null}
                  {fItem===2?<div>
                      <h3>Wedding Photography</h3>
@@ -65,7 +64,7 @@ const Item6 =()=>{
                      </article><br/>
                      <article>For More infromation visit our <a href="/contact" className="blackText">Contact Page</a> and get a qoute we'll be more than happy to get in touch</article>
                      <br/>
-                     <img src={Wed} alt="MoSnaps Wedding Photography"/>
+                     <img src={menuitem[1].image} alt="MoSnaps Wedding Photography"/>
                      </div>:null}
                  {fItem===3?<div>
                      <h3>Baby Shower Snaps</h3>
@@ -84,7 +83,7 @@ const Item6 =()=>{
                      <article>We have an in studio for those profesional Snaps shots and we also do in house call for those who are studio shy or just have a prefrence for a specific place, feel or vibe!</article>
                      <br/>
                      <article>For more infromation click here <a href="/contact" className="blackText">Contact Page</a> and get a quote we'll be more than happy to get in touch</article>
-                     <br/> <img src={art2} alt="Artisitc Pictures"/></div>:null }
+                     <br/> <img src={ArtPics[1].image} alt="Artisitc Pictures"/></div>:null }
                  {fItem===5?<div>
                      <h3 >Studio Photoshoot</h3>
                      <article>The look and feel of your business is the first thing that people see when they are introduced to your business so branding is the one most important thing that attracts people to your business</article>
@@ -92,7 +91,7 @@ const Item6 =()=>{
                      <article>We have an in studio for those profesional Snaps shots and we can help in making sure your business looks good from a real and imaculant standpoint</article>
                      <br/>
                      <article>For more infromation click here <a href="/contact" className="blackText">Contact Page</a> and get a quote we'll be more than happy to get in touch</article>
-                     <br/> <img src={coporate} alt="Artisitc Pictures"/></div>:null }
+                     <br/> <img src={ArtPics[0].image} alt="Artisitc Pictures"/></div>:null }
                  {fItem===6?<div>What's six again?</div>:null}
              </div>
         </div>

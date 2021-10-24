@@ -10,6 +10,7 @@ hr{
 .GHigh{
     background-color: transparent;
     width: 100%;
+    padding-left: 2ex;
 }
 .MPics{
     font-family: monospace;
@@ -56,17 +57,7 @@ ul{
     display: flex;
     right: 0;
 }
-.ZoomCatcher{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    width: 80%;
-    background-color:transparent;
-    padding: 7ex;
-    z-index: 29;
-    transform: translateY(-4ex);
-}
+
 .blueText{
     color: blue;
     font-weight: bold;
@@ -98,20 +89,7 @@ ul{
     height: 65vw;
     object-fit:contain ;
 }
-.ZoomedPic{
-    position:sticky;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: auto;
-    background-color: pink; 
-}
-.ZoomedPic img{
-    width: 65%;
-    height: 65vw;
-    object-fit:contain ;
-}
+
 .flow{
     display: flex;
     justify-content: center;

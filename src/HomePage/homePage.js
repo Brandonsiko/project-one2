@@ -4,7 +4,7 @@ import Display from '../Components/MainDisplay/Display'
 import Empolyee from '../Components/Employee/Empolyee'
 import MyLocation from '../Components/Location/MapLocation'
 
-export default function homePage() {
+ const homePage=()=> {
     return (
         <div>
              <Home/>
@@ -14,3 +14,4 @@ export default function homePage() {
         </div>
     )
 }
+export default homePage

@@ -1,9 +1,9 @@
 import React,{useState} from 'react'
 import "./ContactPage.css"
-import emailjs from 'emailjs-com'
+import emailjs from "emailjs"
 
 
-export default function ContactPage() {
+const ContactPage=()=> {
 const [Emails,setEmails]=useState("")
 const [PlaceSearch,setPlaceSearch]=useState("")
 const Places=[
@@ -52,16 +52,21 @@ const NextPage1=(event)=>{
 }
 const NextPage2=(event)=>{
     event.preventDefault()
-    if(Numbers){
+    if(Numbers.length===10){
         setPage(3)
+    }
+    else{
+        document.getElementById("validNum").style.display="inline"
     }
     
 }
 const BackPage =()=>{
     setPage(page<2 ? 4:page-1)
 }
-const Sent=()=>{
+const Sent=(event)=>{
+    event.preventDefault()
     setPage(page>3 ? 1:page+1)
+    SendEmail()
 }
 const ChangeYr=(event)=>{
     setYear(event.target.value)
@@ -122,39 +127,38 @@ const ChangeNum=(event)=>{
         document.getElementById("Pnum").style.display="none"
     }
 }
-const FilteredPlace =Places.filter((val)=>{
-
-     return val.Province.includes(PlaceSearch)
-     
-})
 const Changeloc=(event)=>{
     setPlaceSearch(event.target.value)
-    if(event.target.value.length<=0){
+    if(event.target.value.length<0){
         document.getElementById("Loc").style.display="none"
         document.getElementById("plcLbl").style.display="inline"
     }else{
         document.getElementById("plcLbl").style.display="none"
         document.getElementById("Loc").style.display="inline"
     }
+    if(document.getElementById("Loc").onblur){
+        document.getElementById("Loc").style.display="none"
+    }
+   
 }
+const SendEmail =()=>{
+ 
+  emailjs.send('service_9gi31u7', 'template_ibh7wOl',{
+    Fname:Fname,
+    email:Emails,
+    Number:Numbers,
+    message:Messages,
+    day:ShootDate,
+    year:Year,
+    month:month,
+    location:PlaceSearch
 
-const SendEmail =(event)=>{
-    /* init("user_ssOoa5rYPR1UQSprPCVIU");  
-     
- */
-  event.preventDefault();
-    emailjs.send(`${process.env.REACT_APP_service_key}`, `${process.env.REACT_APP_template_key}`,{
-       
-    }, `${process.env.REACT_APP_USER_KEY}`)
+}, 'user_ssOoa5rYPR1UQSprPCVIU')
     .then((response)=>{
         console.log(response.text);
     },(error)=>{
         console.log(Error)
     })
-   /*.then(()=>{
-       ClearInput()
-   })*/
-   console.log(process.env)
 }
 
 
@@ -214,8 +218,8 @@ const SendEmail =(event)=>{
                          <hr/>
                        </div>
                        <div className="well">
-                       <label className="Lbl select" id="plcLbl">Province</label>
-                       <div className="Sticky">
+                       <label className="Lbl select"  id="plcLbl" >Province</label>
+                       <div className="Sticky" >
                             <div id="Loc" className="Locations">{Places.map((jy,hi)=>{
                                 return(<div>
                                         <li key={hi} onClick={()=>{
@@ -227,12 +231,13 @@ const SendEmail =(event)=>{
                                 })}
                             </div>
                         </div>
-                        <input type ="text" value={PlaceSearch} onFocus={Changeloc}/>
+                        <input type ="text" value={PlaceSearch} onFocus={Changeloc} />
                        </div>
                        <div className="well">
                          <label className="Lbl" id="Pnum" >Phone No:</label>
                             <input type="text" value={Numbers} required onChange={ChangeNum}/>
-                         
+                         <br/>
+                         <label className="Warning" id="validNum">enter valid number</label>
                       </div>
                       <div className="well">
                           <label className="Lbl" id="MsgLbl">Message</label>
@@ -274,3 +279,4 @@ const SendEmail =(event)=>{
         </div>
     )
 }
+export default ContactPage

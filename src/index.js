@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter as Router,Switch,Route} from  'react-router-dom'
+import { BrowserRouter as Router, Switch ,Route } from 'react-router-dom';
 import './index.css';
 import SideB from "./Components/SideBar/SideBar";
 import LastSection from './Components/FootContact/LastSection';
@@ -14,21 +14,18 @@ import GalleryPage from "./Galery/GalleryPage"
 const Main =()=>{
  return(
    <div>
-     <SideB/>
      <Router>
+     <SideB/>
        <Switch>
           <Route path="/" exact component={homePage}/>
           <Route path="/about" component={About}/>
           <Route path="/contact" component={ContactPage}/>
           <Route path="/service" component={ServicePage}/>
           <Route path="/gallery" component={GalleryPage}/>
-          
         </Switch>
+      <LastSection/>
      </Router>
-     <LastSection/>
    </div>
-   
-  
  )
 }
 

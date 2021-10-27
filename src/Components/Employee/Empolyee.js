@@ -71,10 +71,10 @@ const  Empolyee=()=> {
                       
                                     {placeholderd>0 ?
                                              <div className="ZoomedPic1">
-                           <button className="SNextBtn" onClick={BackP}>close</button>
-                           <img src={MoSnapPics[placeholderd-1].image} className="MiniPic" alt="MoSnap Photography weddings and artistic photos"/>
+                                             <button className="SNextBtn" onClick={BackP}>close</button>
+                                             <img src={MoSnapPics[placeholderd-1].image} className="MiniPic" alt="MoSnap Photography weddings and artistic photos"/>
                        
-                       </div>
+                                    </div>
                                     :null}
                                 </div>
                        </div>:null}

@@ -1,7 +1,7 @@
 @media (max-width:609px) {
    .NavList{
    list-style: none;  
-   width:15ex;
+   width:15rem;
    position: fixed;
    z-index: 90;
    background-color: black ;
@@ -12,8 +12,8 @@
    justify-content: center;
    align-items: center;
    flex-direction: column;
-   padding: 2ex;
-   top: 2ex;
+   padding: 2pt;
+   top: 21pt;
    font-size: 5vw;
    font-family: cursive;
    right: 0;

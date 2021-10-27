@@ -25,5 +25,8 @@
 }
 #Wapp{
     background-color: #fff;
-    border-radius: 10px;
+    padding-top: 1pt;
+    padding-left: 1pt;
+    padding-right: 1pt;
+    border-radius: 15ex;
 }

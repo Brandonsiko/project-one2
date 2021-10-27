@@ -4,9 +4,6 @@ import LeboM from "./Moleboheng.jpg"
 
  const  About=()=> {
 
-    const Lebza ="http:www.instagram.com/leebow_monye"
-
-
     return (
         <div className="b">
             <hr/>
@@ -19,7 +16,7 @@ import LeboM from "./Moleboheng.jpg"
                 <label className="Signature">MoSnap's photographer</label>
                     <div>
                         
-                        <button className="SpecialBtn" ><a href="https://www.instagram.com/leebow_monye " target="_blank" className="black">View More</a></button>
+                        <button className="SpecialBtn" ><a href="https://www.instagram.com/leebow_monye " target="_blank" rel="noreferrer" className="black">View More</a></button>
                     </div>
                 </div>
                

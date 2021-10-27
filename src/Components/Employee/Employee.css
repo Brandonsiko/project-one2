@@ -65,10 +65,10 @@ ul{
     font-style: italic;
 }
 .ZoomBox{
-    background-color:black;
+    background-color:transparent;
     position: absolute;
     z-index: 407;
-    width: 100%;
+    width: 95%;
     height: 40ex;
     display: flex;
     align-items: center;
@@ -80,12 +80,12 @@ ul{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 90%;
     height: auto;
     background-color: black; 
 }
 .ZoomedPic1 img{
-    width: 65%;
+    width: 100%;
     height: 65vw;
     object-fit:contain ;
 }

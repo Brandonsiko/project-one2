@@ -40,6 +40,12 @@ import personal16 from "./gift (16).jpg"
       { image:personal12,
        placeHolder:312},
        { image:personal13,
-        placeHolder:313}
+        placeHolder:313},
+        { image:personal14,
+          placeHolder:314},
+          { image:personal15,
+           placeHolder:315},
+           { image:personal16,
+            placeHolder:316}
 ]
 export default CarsPics

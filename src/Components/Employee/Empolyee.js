@@ -1,5 +1,6 @@
 import {React , useState} from 'react'
 import "./Employee.css"
+import {Link} from "react-router-dom"
 import MoSnapPics from "./Weddings/menuItem"
 import CarsPics from './Cars/Cars'
 import PortraitPics from './Portraits/Portraits'
@@ -200,7 +201,7 @@ const  Empolyee=()=> {
                 <div className="BookCardInner">
                 <div className="SecondInnerCard">Get online on any social media platform
                     <br/>
-                    <a href="/contact" className="blueText">book here</a>
+                    <Link to="/contact" className="blueText">book here</Link>
                     <h4>01</h4></div>
                 <div className="SecondInnerCard">Choose a date and book<h4>02</h4></div>
                 <div className="SecondInnerCard">Enjoy an amazing photoshoot as I work<h4>03</h4></div>

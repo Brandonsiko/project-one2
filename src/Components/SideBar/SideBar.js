@@ -2,7 +2,8 @@ import React from 'react'
 import { useState } from 'react'
 import "./SideB.css"
 import Icon from "./Mosnaps.jpg"
-import MenuIcon from "./menu.png"
+import MenuIcon from "./menu.png" 
+import { Link } from "react-router-dom"
 
 const SideB =()=>{
 const [clicked,setClicked]=useState(true);
@@ -24,30 +25,30 @@ const OpenWhenClicked =()=>{
                {clicked===false ? 
                <ul className="NavList">
                    
-                <li><a  href="/">Home</a></li>
+                <li><Link  to="/" onClick={OpenWhenClicked}>Home</Link></li>
                 <br/>
-                <li><a  href="/about">About</a></li>
+                <li><Link to="/about" onClick={OpenWhenClicked}>About</Link></li>
                 <br/>
-                <li><a  href="/contact">Contact</a></li>
+                <li><Link to="/contact" onClick={OpenWhenClicked}>Contact</Link></li>
                 <br/>
-                <li><a  href="/gallery">Gallery</a></li>
+                <li><Link to="/gallery" onClick={OpenWhenClicked}>Gallery</Link></li>
                 <br/>
-                <li><a  href="/service">Service</a></li>
+                <li><Link to="/service" onClick={OpenWhenClicked}>Service</Link></li>
                 <br/>
                 
                </ul>
                :null}
                <ul className="NavList2">
                    
-                   <li><a  href="/">Home</a></li>
-                   <br/>
-                   <li><a  href="/about">About</a></li>
-                   <br/>
-                   <li><a  href="/contact">Contact</a></li>
-                   <br/>
-                   <li><a  href="/gallery">Gallery</a></li>
-                   <br/>
-                   <li><a  href="/service">Service</a></li>
+               <li><Link  to="/">Home</Link></li>
+                <br/>
+                <li><Link to="/about">About</Link></li>
+                <br/>
+                <li><Link to="/contact">Contact</Link></li>
+                <br/>
+                <li><Link to="/gallery">Gallery</Link></li>
+                <br/>
+                <li><Link to="/service">Service</Link></li>
                    <br/>
                    
                   </ul>

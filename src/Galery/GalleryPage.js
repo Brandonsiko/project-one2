@@ -5,8 +5,10 @@ import ArtPics from '../Components/Employee/Artistic/Artistic'
 import MoSnapPics from '../Components/Employee/Weddings/menuItem'
 import CarsPics from '../Components/Employee/Cars/Cars'
 import PortraitPics from '../Components/Employee/Portraits/Portraits'
-export default function GalleryPage() {
+const GalleryPage=()=> {
 
+
+    PersonalPics.length=8
     const [ page,setPage ]=useState(1)
     const [ placeholderd,setPlaceholder ]=useState(0)
      
@@ -172,3 +174,4 @@ export default function GalleryPage() {
         </div>
     )
 }
+export default GalleryPage
